@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>홍길동 · Portfolio</title>
+  <meta name="description" content="홍길동의 포트폴리오" />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --accent-bg: #eff6ff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0b0c;
+        --surface: #141416;
+        --text: #f5f5f5;
+        --muted: #9ca3af;
+        --border: #27272a;
+        --accent: #60a5fa;
+        --accent-bg: #1e293b;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* Header / About */
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #2563eb);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -1px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .title {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 16px;
+      max-width: 480px;
+      margin: 4px 0 0;
+      color: var(--text);
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.15s, opacity 0.15s, background 0.15s, border-color 0.15s;
+    }
+
+    .contact-btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .contact-btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .contact-btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .contact-btn.primary:hover {
+      opacity: 0.92;
+    }
+
+    .contact-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Projects */
+    h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      font-weight: 600;
+      margin: 0 0 20px;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, transform 0.15s;
+      display: block;
+    }
+
+    .project:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .project-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project-meta {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-bg);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+<main>
+  <!-- 자기소개 -->
+  <section class="about">
+    <!-- 프로필 사진을 사용하려면 아래 div를 다음 한 줄로 교체하세요:
+         <img class="avatar" src="profile.jpg" alt="홍길동" /> -->
+    <div class="avatar" aria-hidden="true">GD</div>
+
+    <div>
+      <h1 class="name">홍길동</h1>
+      <p class="title">직함 / 역할</p>
+    </div>
+
+    <p class="tagline">
+      여기에 한두 줄로 자기소개를 적어주세요.
+      관심 분야나 만들고 싶은 것을 자유롭게 작성하면 됩니다.
+    </p>
+
+    <div class="contacts">
+      <a class="contact-btn primary" href="mailto:mail@mail.com">
+        ✉ Contact Me
+      </a>
+      <a class="contact-btn secondary" href="https://github.com/" target="_blank" rel="noopener">
+        GitHub
+      </a>
+      <a class="contact-btn secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- 프로젝트 -->
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <a class="project" href="#">
+        <p class="project-title">
+          더미 프로젝트 1
+        </p>
+        <p class="project-desc">
+          첫 번째 더미 프로젝트에 대한 한 줄 설명입니다.
+        </p>
+      </a>
+
+      <a class="project" href="#">
+        <p class="project-title">
+          더미 프로젝트 2
+        </p>
+        <p class="project-desc">
+          두 번째 더미 프로젝트에 대한 한 줄 설명입니다.
+        </p>
+      </a>
+
+      <a class="project" href="#">
+        <p class="project-title">
+          더미 프로젝트 3
+        </p>
+        <p class="project-desc">
+          세 번째 더미 프로젝트에 대한 한 줄 설명입니다.
+        </p>
+      </a>
+
+      <a class="project" href="#">
+        <p class="project-title">
+          더미 프로젝트 4
+        </p>
+        <p class="project-desc">
+          네 번째 더미 프로젝트에 대한 한 줄 설명입니다.
+        </p>
+      </a>
+
+      <a class="project" href="#">
+        <p class="project-title">
+          더미 프로젝트 5
+        </p>
+        <p class="project-desc">
+          다섯 번째 더미 프로젝트에 대한 한 줄 설명입니다.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <footer>© 2026 홍길동</footer>
+</main>
+</body>
+</html>
